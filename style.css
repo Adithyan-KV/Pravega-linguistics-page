@@ -1,0 +1,166 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+.background{
+    z-index:-1;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-color:#0f0e0e;
+}
+
+/*-------------------------------------------------------------------------------------*/
+
+/*the following two divs are used to determine the size of the runes in the background*/
+.rune{
+    height:100px;
+    width:100px;
+}
+
+.rune2{
+    height:70px;
+    width:70px;
+}
+
+/*styling properties for the 3 different sets (layers) of the runes floating in the background*/
+.set{
+    position:absolute;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+}
+
+.set div{
+    position:absolute;
+    display:block;
+}
+
+/*sets a position to each individual runes in set1 (which are inherited by the other two sets) from where it animates randomly using some tweaks in values for animation*/
+.set div:nth-child(1)
+{
+    left:20%;
+    animation:animate 53s linear infinite;
+    animation-delay: -5s;
+}
+
+.set div:nth-child(2)
+{
+    left:30%;
+    animation:animate 33s linear infinite;
+    animation-delay: -13s;
+}
+
+.set div:nth-child(3)
+{
+    left:17%;
+    animation:animate 55s linear infinite;
+    animation-delay: 5s;
+}
+
+.set div:nth-child(4)
+{
+    left:80%;
+    animation:animate 50s linear infinite;
+    animation-delay:-22s;
+}
+
+
+.set div:nth-child(5)
+{
+    left:10%;
+    animation:animate 50s linear infinite;
+}
+
+.set div:nth-child(6)
+{
+    left:20%;
+    animation:animate 30s linear infinite;
+}
+
+.set div:nth-child(7)
+{
+    left:44%;
+    animation:animate 40s linear infinite;
+}
+
+.set div:nth-child(8)
+{
+    left:60%;
+    animation:animate 60s linear infinite;
+}
+
+.set div:nth-child(9)
+{
+    left:93%;
+    animation:animate 20s linear infinite;
+}
+
+.set div:nth-child(10)
+{
+    left:3%;
+    animation:animate 20s linear infinite;
+}
+
+.set2{
+    transform: scale(1.2) rotateY(180deg);
+    filter: blur(2px);
+}
+
+.set3{
+    transform: scale(0.6) rotateX(180deg);
+    filter:blur(3px);
+}
+
+/*the animation which all of the runes will follow, this is general for all the symbols and additional tweaks are done in their individual sets or n-th child selectors as used earlier*/
+@keyframes animate{
+    0%{
+        top:-10%;
+        opacity:0;
+    }
+    
+    20%{
+        transform: translateX(20px) rotate(45deg);
+    }
+    
+    30%{
+       opacity:1; 
+    }
+    
+    60%{
+        transform: translateX(-30px) rotate(120deg);
+    }
+    
+    
+    100%{
+        top:110%;
+    }
+}
+
+/*------------------------------------------------------------------------------------------*/
+
+/*CSS FOR THE  CARDS OF THE INDIVIDUAL ITEMS FOLLOW*/
+
+/*the container element for the item cards*/
+.flex-container{
+    margin-right: auto;
+    margin-left:auto;
+    height:80%;
+    width:80%;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+/*box for individual item cards*/
+.box{
+    height:300px;
+    width:400px;
+    margin-top:20px;
+    margin-right:20px;
+    opacity:0.7;
+    background-color:black;
+    z-index:100;
+}
