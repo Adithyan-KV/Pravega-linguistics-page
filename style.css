@@ -1,6 +1,8 @@
 body{
     margin:0;
     padding:0;
+    background-color:#0f0e0e;
+    height:100%;
 }
 
 .background{
@@ -9,6 +11,7 @@ body{
     width:100%;
     height:100%;
     background-color:#0f0e0e;
+    overflow: hidden;
 }
 
 /*-------------------------------------------------------------------------------------*/
@@ -140,13 +143,13 @@ body{
     
     
     100%{
-        top:110%;
+        top:100%;
     }
 }
 
-/*------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------*/
 
-/*CSS FOR THE  CARDS OF THE INDIVIDUAL ITEMS FOLLOW*/
+/*CSS FOR THE  CARDS OF THE INDIVIDUAL ITEMS FOLLOW, THE FLEXBOX IMPLEMENTATION AUTOMATICALLY YIELDS A   CERTAIN AMOUNT OF RESPONSIVENES TO THE TEMPLATE*/
 
 /*the container element for the item cards*/
 .flex-container{
@@ -167,6 +170,7 @@ body{
     min-width:300px;
     margin-top:20px;
     margin-right:3%;
+    margin-bottom:10px;
     opacity:0.7;
     background-color:black;
 }
@@ -198,30 +202,120 @@ body{
 #active-box-img{
     margin:0px 20px 20px 20px;
     height:50%;
-    width:70%;
+    width:80%;
     background-color:white;
 }
 
 #active-box-txt{
     margin:20px 20px;
     height:auto;
-    width:70%;
+    width:80%;
 }
 
 .box-heading{
-    font-family:"Helvetica";
+    font-family:"Titillium Web",sans-serif;
     font-size:20px;
     text-align: center;
-    color:white;
+    color:#e6e6e6;
 }
 
 .box-details{
     margin-top:10px;
-    font-family:"Helvetica",sans;
+    font-family:"Titillium Web",sans-serif;
     font-size:14px;
-    color:white;
+    color:#e6e6e6;
 }
 
 #active-box-heading{
     font-size:30px; 
 }
+
+/*a flex box is implemented for the button container as well for responsiveness*/
+.button-container{
+    margin-bottom: 10px;
+    justify-content: center;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/*the three buttons which are at the bottom of each box*/
+.button{
+    color:#e6e6e6;
+    font-family:"Titillium Web",sans-serif;
+    text-align:center;
+    width:250px;
+    font-size: 20px;
+    border:1px solid #e6e6e6;
+    margin:5px;
+    padding:3px 0px;
+}
+
+/*some special visual emphasis for the buttons of the active tile*/
+#main-button-container{
+    width:90%;
+}
+.active-button{
+    padding:5px 0px;
+    width:25%;
+    min-width:200px;
+}
+
+.button:hover{
+    color:white;
+    border:2px solid white;
+}
+
+.button:active{
+    color:white;
+    border:1px solid white;
+}
+
+.seperator{
+    background-color:black;
+    width:80%;
+    margin:auto;
+    text-align:center;
+    color:#e6e6e6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size:20px;
+}
+
+/*----------------------------------------------------------------------------------*/
+
+/*USING MEDIA QUERIES FOR RESPONSIVENESS FOR MOBILE*/
+@media(max-width:760px) {
+    
+.flex-container{
+        justify-content: center;
+}
+.box{
+    width:90%;  
+    margin:10px auto;
+    }
+#active-box{
+    height:auto;
+    min-height:300px;
+    width:30%;
+    min-width:300px;
+    margin-top:20px;
+    margin-right:3%;
+    opacity:0.7;
+    background-color:black;
+}
+    
+#active-box-img{
+    width:90%;
+    height:200px;
+    margin:20px auto;
+    background-image:url(img/map.png);
+}
+
+#active-box-txt{
+    width:90%;
+    height:auto;
+    margin:10px auto; 
+}
+    
+}
+
